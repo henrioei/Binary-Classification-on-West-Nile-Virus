@@ -3,11 +3,11 @@ ___
 
 ## Problem Statement
 
-West Nile virus (WNV) is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. As data scientists, we want to understand the factors driving the spread of WNV by leveraging on data collected by Chicago's surveillance system, weather stations, and pesticide spray deployment, in order to develop a classfication model that could predict the presence of WNV within the area of the city. Through these studies, we hope to suggest a cost-efficient and effective method of deploying pesticides within the area.
+West Nile virus (WNV) is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. As data scientists, we want **to understand the factors driving the spread of WNV by leveraging on data collected by Chicago's surveillance system, weather stations, and pesticide spray deployment, in order to develop a classfication model that could predict the presence of WNV within the area of the city. Through these studies, we hope to suggest a cost-efficient and effective method of deploying pesticides within the area.**
 
 ## Summary
 
-This project is the fourth project for General Assembly's Data Science Immersive Program and was part of a Kaggle competition to predict the occurance of West Nile Virus in the city of Chicago.<br>
+This project is the fourth project for General Assembly Singapore's Data Science Immersive Flex Batch 2 program (DSIF2) and was part of a Kaggle competition to predict the occurance of West Nile Virus in the city of Chicago.<br>
 The project explores data collected from various sources, namely:<br>
  • Mosquito trap data collected by the city's surveillance and control system<br>
  • Location data of spraying efforts<br>
@@ -42,17 +42,11 @@ https://github.com/86lekwenshiung/West-Nile-Virus-Prediction
 <br>
 
 ## Data Acquisition 
-<br>
-&emsp;• 5000 posts from each of the selected subreddits (<B>r/MachineLearning</B> and <B>r/datascience</B>) are extracted.<br>
-&emsp;• The <B>pushshift API</B> function call is used to extract the posts.<br>
-&emsp;• Since each call is limited to 100 posts, a function is created to loop until the required number of posts are acquired. <br> 
-&emsp;• To reduce load on the <B>pushshift</B> server, a pause of 1 second is applied between each call in the loop.<br>
-&emsp;• The value of <B>created_utc</B> is used to keep track of extracted posts and pull the next batch of posts.<br>
-&emsp;• The raw dataset is pickled to reduce calling the API during development and testing.        
-The following datasets were created and used during this project:
-train
-spray
-weather
+The following datasets were provided for this project:<br>
+&emsp;• train.csv<br>
+&emsp;• test.csv<br>
+&emsp;• spray.csv<br> 
+&emsp;• weather.csv<br>
 
 
 ## 3. EDA and Pre-processing 
@@ -73,6 +67,13 @@ weather
 |Spray CSV| Latitude , Longtitude. Dataset only at 2011, 2013|
 
 **workflow**
+In this section, we undergo studying, understanding and feature engineering of the datasets. After that, datasets were combined. The following actions are taken:
+Analyzing the train data and removing features that are not needed. Feature Engineering of species and distance of traps' locations and weather station.
+Analyzing the spray and trap data. Feature Engineering of trap_sprayed feature
+Analyzing the weather data and removing features that are not need. Creating weekly average and time-lagged features for all remaning weather conditions. Feature Engineering of Codesum feature.
+Combined all datasets together into one. Analyzing the combined dataset. Feature Engineering of traps feature. Drop features that will not be used and prepare for modeling.
+We discovered that the time of the day where the sun is out was where the presence of Wnv was the strongest. Also, we observed that the more competent vectors for the spread of Wnv were the culex pipiens and culex restuans species. In order to deploy pesticides in a more cost-efficient way, we recommend spraying in areas where culex pipiens/restuans are most prominent and during the day as the Sun rises where the mosquitoes are most active.
+
 1. EDA
 2. Feature Engineering 
 3. Data Preprocessing
@@ -82,34 +83,13 @@ weather
 
 
 Contents:
-Datasets Used
 Exploratory Data Analysis & Data Cleaning
 Modeling & Evaluation
 Additional Modeling
 Cost Benefit Analysis
 Conclusion and Recommendations
 Python Library Used
-1. Datasets Used
-samplesubmission
-train_final
-train_spray_cleaned
-train_spray_final
-trap_location
-test
-submission_predictions
-spray_cleaned
-spray_final
-weather_final
-combined_final
-combined_training
-X_train
 2. Exploratory Data Analysis & Data Cleaning
-In this section, we undergo studying, understanding and feature engineering of the datasets. After that, datasets were combined. The following actions are taken:
-Analyzing the train data and removing features that are not needed. Feature Engineering of species and distance of traps' locations and weather station.
-Analyzing the spray and trap data. Feature Engineering of trap_sprayed feature
-Analyzing the weather data and removing features that are not need. Creating weekly average and time-lagged features for all remaning weather conditions. Feature Engineering of Codesum feature.
-Combined all datasets together into one. Analyzing the combined dataset. Feature Engineering of traps feature. Drop features that will not be used and prepare for modeling.
-We discovered that the time of the day where the sun is out was where the presence of Wnv was the strongest. Also, we observed that the more competent vectors for the spread of Wnv were the culex pipiens and culex restuans species. In order to deploy pesticides in a more cost-efficient way, we recommend spraying in areas where culex pipiens/restuans are most prominent and during the day as the Sun rises where the mosquitoes are most active.
 3. Modelling & Evaluation
 Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores. Because there were heavy imbalances in the data collected (about 95% of the data indicated no Wnv), an over-sampling method known as SMOTE (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the AdaBoost model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting of the data but the small difference was acceptable by our means
 Models used:

@@ -99,10 +99,10 @@ Contents:
 6. Python Library Used
 
 
-1. Exploratory Data Analysis & Data Cleaning
+ 1. Exploratory Data Analysis & Data Cleaning
 
 
-2. Modelling & Evaluation
+ 2. Modelling & Evaluation
 
 
 Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores. Because there were heavy imbalances in the data collected (about 95% of the data indicated no Wnv), an over-sampling method known as SMOTE (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the AdaBoost model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting of the data but the small difference was acceptable by our means
@@ -126,22 +126,22 @@ Several classifier models were developed, where the hyperparameters were tuned f
 - Accuracy
 
 
-3. Additional Modelling
+ 3. Additional Modelling
 We also explored into deep learning and neural networks. However, our neural network did not outperform the selected model, likely due to the fact it had low complexity. We decided not to further develop the deep learning model since it is not easily interpretable and we had to keep within the limited timeframe of this project.
 
 
-4. Cost Benefit Analysis
+ 4. Cost Benefit Analysis
 For our project, we use trap-sprayed feature as a strong predictor of the presence of the Wnv in some of the models, suggesting that the spraying was effective in dealing with the Wnv to a large extent. Using our production model to predict where we should spray as a benchmark for future assessments, the benefits of $1,048,789.03 would out-weigh the cost, which is the amount that would be saved from excessively spraying the whole city. The cost of spraying the whole city is $$1,653,467.04, whereas the direct cost and indirect cost of targeted spraying are $145,060.68 and $459,617.30.
 
 
-5. Conclusion & Recommendation
+ 5. Conclusion & Recommendation
 In this project,we gained many useful insights about the mosquito population in Windy City and its relation to the epidemic of West Nile Virus(Wnv). Using our production model which is AdaBoost algorithm which gave us a high AUC and recall score. From our model, we can see the top features of importance contain result speed, wet & dry condition, sunlight, station pressure and some of the traps.
 
 
 Moving forward, more geographic and demographics information could also be useful in studying the presence of Wnv. Since Wnv is spread through moquitoes, we could expect that proportion of open water sources, percentage of grass land, forests, and urban landscape are all factors of the livelihood of these mosquitoes. We can expand the studies to the rest of United States with more data on more mosquitoes species as other states have other species as the main vector species.
 
 
-6. Python Library Used
+ 6. Python Library Used
 - Pandas
 - Numpy
 - Seaborn

@@ -83,8 +83,8 @@ We discovered that the time of the day where the sun is out was where the presen
 
 
 Contents:
-Exploratory Data Analysis & Data Cleaning
-Modeling & Evaluation
+- Exploratory Data Analysis & Data Cleaning
+- Modeling & Evaluation
 Additional Modeling
 Cost Benefit Analysis
 Conclusion and Recommendations

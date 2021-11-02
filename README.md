@@ -3,7 +3,9 @@ ___
 
 ## Problem Statement
 
-West Nile virus (WNV) is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. As data scientists, we want **to understand the factors driving the spread of WNV by leveraging on data collected by Chicago's surveillance system, weather stations, and pesticide spray deployment, in order to develop a classfication model that could predict the presence of WNV within the area of the city. Through these studies, we hope to suggest a cost-efficient and effective method of deploying pesticides within the area.**
+West Nile virus (WNV) is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. 
+
+As data scientists, we want **to understand the factors driving the spread of WNV by leveraging on data collected by Chicago's surveillance system, weather stations, and pesticide spray deployment, in order to develop a classfication model that could predict the presence of WNV within the area of the city. Through these studies, we hope to suggest a cost-efficient and effective method of deploying pesticides within the area.**
 
 ## Summary
 
@@ -66,7 +68,9 @@ The following datasets were provided for this project:<br>
 |WNV_Present| 1 means WNV is present, and 0 means not present|
 |Spray CSV| Latitude , Longtitude. Dataset only at 2011, 2013|
 
-**workflow**
+**Workflow**
+
+
 In this section, we undergo studying, understanding and feature engineering of the datasets. After that, datasets were combined. The following actions are taken:
 
 Analyzing the train data and removing features that are not needed. Feature Engineering of species and distance of traps' locations and weather station.
@@ -87,12 +91,12 @@ We discovered that the time of the day where the sun is out was where the presen
 
 
 Contents:
-1- Exploratory Data Analysis & Data Cleaning
-2- Modeling & Evaluation
-3- Additional Modeling
-4- Cost Benefit Analysis
-5- Conclusion and Recommendations
-6- Python Library Used
+1. Exploratory Data Analysis & Data Cleaning
+2. Modeling & Evaluation
+3. Additional Modeling
+4. Cost Benefit Analysis
+5. Conclusion and Recommendations
+6. Python Library Used
 
 
 1. Exploratory Data Analysis & Data Cleaning

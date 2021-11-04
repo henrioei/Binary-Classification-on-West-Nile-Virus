@@ -35,8 +35,7 @@ https://github.com/86lekwenshiung/West-Nile-Virus-Prediction
 
 | Folder | Description |
 | :--- | :--- |
-| West-Nile-Virus-Prediction/data         | Folder for datasets used in the project                              |
-| West-Nile-Virus-Prediction/data/interim | Folder for temporary working data generated during notebook run      |
+| West-Nile-Virus-Prediction/dataset      | Folder for datasets used in the project                              |
 | West-Nile-Virus-Prediction/notebooks    | Jupyter Notebook for the project                                     |
 | West-Nile-Virus-Prediction/presentation | PDF file of the presentation                                         |
 | West-Nile-Virus-Prediction/references   | GA project references as well as any external data                   |

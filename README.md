@@ -9,27 +9,27 @@ As data scientists, we want **to understand the factors driving the spread of WN
 
 ## Summary
 
-This project is the fourth project for General Assembly Singapore's Data Science Immersive Flex Batch 2 program (DSIF2) and was part of a Kaggle competition to predict the occurance of West Nile Virus in the city of Chicago.<br>
+This project is the fourth project for General Assembly Singapore's Data Science Immersive Flex Batch 2 program (DSIF2) and was part of a Kaggle competition to predict the occurance of West Nile Virus in the city of Chicago.<br><br>
 The project explores data collected from various sources, namely:<br>
- • Mosquito trap data collected by the city's surveillance and control system<br>
- • Location data of spraying efforts<br>
- • Weather data<br>
+&emsp;• Mosquito trap data collected by the city's surveillance and control system<br>
+&emsp;• Location data of spraying efforts<br>
+&emsp;• Weather data<br>
 
 The data from these three sources were combined to form a dataset for analysis and modelling. Feature engineering exercise were perfomed to add information relevant to the classification models. **The two best models will be selected as final result for this project.**<br>
 
-## Implementation
+## Project Team Members
 
-### Team Members
-
-• Julian **Chang**<br>
-• Ahmad **Khalil**<br>
-• Terence **Lek**<br>
-• Henri David **Oei**<br>
-• Elang **Setiawan**<br>
+&emsp;• Julian **Chang**<br>
+&emsp;• Ahmad **Khalil**<br>
+&emsp;• Terence **Lek**<br>
+&emsp;• Henri David **Oei**<br>
+&emsp;• Elang **Setiawan**<br>
 
 ### Github repository
 
 https://github.com/86lekwenshiung/West-Nile-Virus-Prediction
+
+## Implementation
 
 ### Folder Structure
 
@@ -40,32 +40,59 @@ https://github.com/86lekwenshiung/West-Nile-Virus-Prediction
 | West-Nile-Virus-Prediction/presentation | PDF file of the presentation                                         |
 | West-Nile-Virus-Prediction/references   | GA project references as well as any external data                   |
 
-<br>
 
-## Data Acquisition 
+### Data
 The following datasets were provided for this project:<br>
 &emsp;• train.csv<br>
 &emsp;• test.csv<br>
 &emsp;• spray.csv<br> 
 &emsp;• weather.csv<br>
 
+### Data Dictionary
+
+|Data                   |Source          |Description                              |  
+|---                    |---             |---                                      |  
+|Date                   |train.csv       |Date of sample collected (yyyy-mm-dd)    |  
+|Address                |train.csv       |Street address of mosquito trap          |  
+|Species                |train.csv       |Species of mosquite trapped              |  
+|Block                  |train.csv       |Block number of mosquito trap            |  
+|Street                 |train.csv       |Street name of mosquito trap             |  
+|Trap                   |train.csv       |Mosquito Trap ID. Letter behind Trap ID indicate it is near a main Trap |    
+|AddressNumberAndStreet |train.csv       |Full address of mosquito trap            |   
+|Latitude               |train.csv       |Latitude coordinate of mosquito trap     |  
+|Longitude              |train.csv       |Longitude coordinate of mosquito trap    |  
+|AddressAccuracy        |train.csv       |Accuracy of the address                  |  
+|NumMosquitos           |train.csv       |Number of mosquitos caught in trap       |  
+|WnvPresent             |train.csv       |Presence of West Nile Virus (0=No, 1=Yes)|  
+|Date                   |spray.csv       |The date of mosquito spray (yyyy-mm-dd)  |  
+|Time                   |spray.csv       |The time of mosquito spray (H:mm:ss AM/PM)|  
+|Latitude               |spray.csv       |Latitude coordinate of mosquito spray    |  
+|Longitude              |spray.csv       |Longiture coordinate of mosquito spray   |  
+|Station                |weather.csv     |Weather Station ID                       |
+|Date                   |weather.csv     |Date of reading (yyyy-mm-dd)             | 
+|Tmax                   |weather.csv     |Maximum Temperature                      |
+|Tmin                   |weather.csv     |Minimum Temperature                      |
+|Tavg                   |weather.csv     |Average Temperature                      |
+|Depart                 |weather.csv     |                                         |
+|DewPoint               |weather.csv     | |               
+|WetBulb                |weather.csv     | |                   
+|Heat                |weather.csv     | |
+|Cool                |weather.csv     | |
+|Sunrise                |weather.csv     | |
+|Sunset                |weather.csv     | |
+|CodeSum                |weather.csv     | |
+|Depth                |weather.csv     | |
+|Water1                |weather.csv     | |
+|SnowFall                |weather.csv     | |
+|PrecipTotal                |weather.csv     | |
+|StnPressure                |weather.csv     | |
+|SeaLevel                |weather.csv     | |
+|ResultSpeed                |weather.csv     | |
+|ResultDir                |weather.csv     | |
+|AvgSpeed                |weather.csv     | |
 
 ## 3. EDA and Pre-processing 
 
-**Key variables**
-
-|Data|Description|
-|---|---|
-|Id|Id of the Mosquito|
-|Species|Species of Mosquito|
-|Address|Location of Trap|
-|Block| Block nunber of address|
-|Street| Street Name|
-|Trap ID| Id of Trap. Letter behind Trap ID indicate it is near a main Trap|
-|Latitude , Longtitude|Location of Trap , Mosquito|
-|NumMosquito| No. of Mosquito|
-|WNV_Present| 1 means WNV is present, and 0 means not present|
-|Spray CSV| Latitude , Longtitude. Dataset only at 2011, 2013|
 
 **Workflow**
 

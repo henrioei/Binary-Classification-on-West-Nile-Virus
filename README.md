@@ -119,6 +119,7 @@ Contents:
 5. Conclusion and Recommendations
 6. Python Library Used
 
+---------------------------
 
  1. Exploratory Data Analysis & Data Cleaning
 

@@ -82,8 +82,8 @@ The following datasets were provided for this project:<br>
 |Sunrise                |weather.csv     |Time of sunrise |
 |Sunset                 |weather.csv     |Time of sunset |
 |CodeSum                |weather.csv     | Weather phenomena |
-|Depth                  |weather.csv     | |
-|Water1                 |weather.csv     | |
+|Depth                  |weather.csv     | Depth |
+|Water1                 |weather.csv     | Water |
 |SnowFall               |weather.csv     | Precipitation depth |
 |PrecipTotal            |weather.csv     | Precipitation depth |
 |StnPressure            |weather.csv     | Average station pressure |

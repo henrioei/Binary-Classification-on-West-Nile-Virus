@@ -127,7 +127,7 @@ T900 (at Ohare airport) is sampled the most.
 Most sampling was performed in 2007 and decreased afterward. Very inconsistent and high oversampling in August 2007 leading to high population of mosquitos in 2007.
 
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/freq_traps.png' width = 50%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/freq_traps.png' width = 100%>
 <p/>
 
 <p align = 'center'>

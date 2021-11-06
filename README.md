@@ -6,13 +6,21 @@ ___
 Source : https://www.purdue.edu/uns/html4ever/2006/060814.Rossmann.westnile.html
 
 
+## Executive Summary
+
+In 2016 Chicago had 108 Human cases of West Nile Virus (WNV)[5] based on studies, there is an average USD 11,000 1-year persistent cost due to medical cost and personal loss. Since WNV is spread through mosquitoes, there have been efforts to track the population of mosquitos with traps spread throughout the city. As a solution, Chicago has attempted to reduce the mosquito population since 2011 by starting a pesticide regime using Zenivex-E4-Etofenprox mosquito adulticide. In this project, the historical records of mosquito populations with and without WNV in Chicago and machine learning techniques are used to predict the presence of WNV. Then a cost-benefit analysis is conducted to determine a strategy for pesticide spraying.
+
+
+To predict the presence of WNV, supervised learning models such as XGBoost and Random Forest are trained and tested. XGBoost having the best AUC score. 
+
+
+A Cost-Benefit analysis also revealed that an estimated annual human costs from WNV can budget a citywide pesticide spray up to 7-8 times in a year.
+
 ## Introduction
 
-West Nile Virus (WNV) is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. (West Nile virus - Wikipedia) 
+WNV is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. (West Nile virus - Wikipedia) 
 
 As data scientists, we want **to understand the factors driving the spread of WNV by leveraging on data collected by Chicago's surveillance system, weather stations, and pesticide spray deployment, in order to develop a classification model that could predict the presence of WNV within the area of the city. Through these studies, we hope to suggest a cost-efficient and effective method of deploying pesticides within the area.**
-
-## Executive Summary
 
 This project is the fourth project for General Assembly Singapore's Data Science Immersive Flex Batch 2 program (DSIF2) and was part of a Kaggle competition to predict the occurrence of West Nile Virus in the city of Chicago.<br><br>
 The project explores data collected from various sources, namely:<br>
@@ -29,6 +37,7 @@ The data from these three sources were combined to form a dataset for analysis a
 &emsp;• Terence Lek - Modelling, Documentation<br>
 &emsp;• Henri David Oei - EDA, Modelling<br>
 &emsp;• Elang Setiawan - Feature Engineering, Documentation<br>
+
 
 
 ## Implementation
@@ -83,7 +92,7 @@ The following datasets were provided for this project:<br>
 |ResultDir                |weather.csv     |Wind direction |
 |AvgSpeed                |weather.csv     |Wind average speed |
 
-## *Evaluation Metrics*
+## Evaluation Metrics
 
 Since this is a classification model , we will evaluate how our model will perform in classifying between the presence and the absence of Wnv. Depending on the preprocessing method, different evaluation metrics will be used accordingly.
 
@@ -91,7 +100,7 @@ For Imbalanced Data : F1 Score , Precision , AUC
 For Balanced Data : F1 Score , Accuracy
 Others Metrics : Recall Score
 
-## *Workflow Process*
+## Workflow Process
 
 ### 1. General EDA
 ### 2. EDA on Geolocation
@@ -182,7 +191,7 @@ We generated three feature categories for our modeling process:
 ## 5. Modelling & Evaluation
 
 
-Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores. Because there were heavy imbalances in the data collected (about 95% of the data indicated no Wnv), an over-sampling method known as SMOTENN (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the XGBoost model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting of the data but the small difference was acceptable by our means
+Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores. Because there were heavy imbalances in the data collected (about 95% of the data indicated no Wnv), an over-sampling method known as SMOTENN (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the XGBoost model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting of the data but the small difference was acceptable by our means.
 
 
 |      | Model  | Train_AUC | Test_AUC | Precision | Specificity| Recall  | F1_score |  
@@ -206,12 +215,15 @@ Submission to kaggle resulted in a score of 0.62.
 In this project we analyzed the costs (using pesticide Zenivex E4[1]) based on estimates of $500 for a session for 0.5 acre of land[2]. The cost is $149,000 for 0.6 km^2 [3]. By spending on treatment there will be fewer people dying or falling ill thus increasing workplace productivity and healthcare savings (average $11,000)[4]. We based our calculation on a study done in 2016 where 108 WNV cases[5] were found incurring an estimated medical bill of $1,190,000
 
 
+The current spray strategy in 2013 is found to be insignificant when compared to areas without treatment. While the spraying regime is performed sporadically in Chicago, there may be some coverage in 2013, but it is not widespread. In terms of pesticide spray strategy, it is found that the effective coverage is low, having treated areas only sprayed once. Estimated human cost (from hospital and productivity costs) of WNV was calculated on the city’s infected population in 2016. The estimated human costs can budget a citywide pesticide spray up to 7-8 times.
+
+
 Since the benefits outweigh the costs the county should socialise the cost and share the prevention costs with the community as a whole.
 
-
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/est%20cost%20vs%20spray.png' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/est%20cost%20vs%20spray.png’' width = 75%>
 <p/>
+
 
 
 Moving forward, more geographic and demographic information could also be useful in studying the presence of Wnv. Since Wnv is spread through mosquitoes, we could expect that proportion of open water sources, percentage of grassland, forests, and urban landscape are all factors of the livelihood of these mosquitoes. We can expand the studies to the rest of the United States with more data on more mosquitoes species as other states have other species as the main vector species.
@@ -219,6 +231,7 @@ Moving forward, more geographic and demographic information could also be useful
 
 ## References
 * [1. Pesticide info](https://www.cmmcp.org/pesticide-information/pages/zenivex-e4-etofenprox)
+
 * [2. Cost of spray](https://www.callnorthwest.com/2020/05/how-much-does-a-mosquito-treatment-cost/)
 
 * [3. Chicago spray strategy](https://www.chicago.gov/city/en/depts/cdph/provdrs/healthy_communities/news/2020/august/city-to-spray-insecticide-thursday-to-kill-mosquitoes.html)

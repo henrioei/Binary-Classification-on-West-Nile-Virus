@@ -96,9 +96,9 @@ The following datasets were provided for this project:<br>
 
 Since this is a classification model , we will evaluate how our model will perform in classifying between the presence and the absence of Wnv. Depending on the preprocessing method, different evaluation metrics will be used accordingly.
 
-For Imbalanced Data : F1 Score , Precision , AUC
-For Balanced Data : F1 Score , Accuracy
-Others Metrics : Recall Score
+* For Imbalanced Data : F1 Score , Precision , AUC
+* For Balanced Data : F1 Score , Accuracy
+* Others Metrics : Recall Score
 
 ## Workflow Process
 
@@ -127,11 +127,11 @@ T900 (at Ohare airport) is sampled the most.
 Most sampling was performed in 2007 and decreased afterward. Very inconsistent and high oversampling in August 2007 leading to high population of mosquitos in 2007.
 
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/freq_traps.png' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/freq_traps.png' width = 50%>
 <p/>
 
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/traps%20per%20year.png' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/traps%20per%20year.png' width = 50%>
 <p/>
 
 * 2. Mosquito Species
@@ -221,7 +221,7 @@ The current spray strategy in 2013 is found to be insignificant when compared to
 Since the benefits outweigh the costs the county should socialise the cost and share the prevention costs with the community as a whole.
 
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/est%20cost%20vs%20spray.png’' width = 75%>
+  <img src = 'https://raw.githubusercontent.com/86lekwenshiung/West-Nile-Virus-Prediction/main/image/est%20cost%20vs%20spray.png' width = 75%>
 <p/>
 
 

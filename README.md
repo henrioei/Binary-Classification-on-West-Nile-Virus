@@ -8,31 +8,27 @@ Source : https://www.purdue.edu/uns/html4ever/2006/060814.Rossmann.westnile.html
 
 ## Introduction
 
-West Nile virus (WNV) is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. 
+West Nile Virus (WNV) is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. (West Nile virus - Wikipedia) 
 
-As data scientists, we want **to understand the factors driving the spread of WNV by leveraging on data collected by Chicago's surveillance system, weather stations, and pesticide spray deployment, in order to develop a classfication model that could predict the presence of WNV within the area of the city. Through these studies, we hope to suggest a cost-efficient and effective method of deploying pesticides within the area.**
+As data scientists, we want **to understand the factors driving the spread of WNV by leveraging on data collected by Chicago's surveillance system, weather stations, and pesticide spray deployment, in order to develop a classification model that could predict the presence of WNV within the area of the city. Through these studies, we hope to suggest a cost-efficient and effective method of deploying pesticides within the area.**
 
-## Summary
+## Executive Summary
 
-This project is the fourth project for General Assembly Singapore's Data Science Immersive Flex Batch 2 program (DSIF2) and was part of a Kaggle competition to predict the occurance of West Nile Virus in the city of Chicago.<br><br>
+This project is the fourth project for General Assembly Singapore's Data Science Immersive Flex Batch 2 program (DSIF2) and was part of a Kaggle competition to predict the occurrence of West Nile Virus in the city of Chicago.<br><br>
 The project explores data collected from various sources, namely:<br>
 &emsp;• Mosquito trap data collected by the city's surveillance and control system<br>
 &emsp;• Location data of spraying efforts<br>
 &emsp;• Weather data<br>
 
-The data from these three sources were combined to form a dataset for analysis and modelling. Feature engineering exercise were perfomed to add information relevant to the classification models. **The two best models will be selected as final result for this project.**<br>
+The data from these three sources were combined to form a dataset for analysis and modelling. Feature engineering exercises were performed to add information relevant to the classification models. **The two best models will be selected as the final result for this project.**<br>
 
 ## Project Team Members
 
-&emsp;• Julian **Chang**<br>
-&emsp;• Ahmad **Khalil**<br>
-&emsp;• Terence **Lek**<br>
-&emsp;• Henri David **Oei**<br>
-&emsp;• Elang **Setiawan**<br>
-
-### Github repository
-
-https://github.com/86lekwenshiung/West-Nile-Virus-Prediction
+&emsp;• Julian Chang<br>
+&emsp;• Ahmad Khalil<br>
+&emsp;• Terence Lek<br>
+&emsp;• Henri David Oei<br>
+&emsp;• Elang Setiawan<br>
 
 ## Implementation
 
@@ -49,7 +45,7 @@ The following datasets were provided for this project:<br>
 |---                    |---             |---                                      |  
 |Date                   |train.csv       |Date of sample collected (yyyy-mm-dd)    |  
 |Address                |train.csv       |Street address of mosquito trap          |  
-|Species                |train.csv       |Species of mosquite trapped              |  
+|Species                |train.csv       |Species of mosquito trapped              |  
 |Block                  |train.csv       |Block number of mosquito trap            |  
 |Street                 |train.csv       |Street name of mosquito trap             |  
 |Trap                   |train.csv       |Mosquito Trap ID. Letter behind Trap ID indicate it is near a main Trap |    
@@ -57,148 +53,140 @@ The following datasets were provided for this project:<br>
 |Latitude               |train.csv       |Latitude coordinate of mosquito trap     |  
 |Longitude              |train.csv       |Longitude coordinate of mosquito trap    |  
 |AddressAccuracy        |train.csv       |Accuracy of the address                  |  
-|NumMosquitos           |train.csv       |Number of mosquitos caught in trap       |  
+|NumMosquitos           |train.csv       |Number of mosquitoes caught in trap       |  
 |WnvPresent             |train.csv       |Presence of West Nile Virus (0=No, 1=Yes)|  
 |Date                   |spray.csv       |The date of mosquito spray (yyyy-mm-dd)  |  
 |Time                   |spray.csv       |The time of mosquito spray (H:mm:ss AM/PM)|  
 |Latitude               |spray.csv       |Latitude coordinate of mosquito spray    |  
-|Longitude              |spray.csv       |Longiture coordinate of mosquito spray   |  
+|Longitude              |spray.csv       |Longitude coordinate of mosquito spray   |  
 |Station                |weather.csv     |Weather Station ID                       |
 |Date                   |weather.csv     |Date of reading (yyyy-mm-dd)             | 
 |Tmax                   |weather.csv     |Maximum Temperature                      |
 |Tmin                   |weather.csv     |Minimum Temperature                      |
 |Tavg                   |weather.csv     |Average Temperature                      |
 |Depart                 |weather.csv     |                                         |
-|DewPoint               |weather.csv     | |               
-|WetBulb                |weather.csv     | |                   
+|DewPoint               |weather.csv     |Temperature of water condensation |               
+|WetBulb                |weather.csv     | Temperature of wet bulb thermometer|                   
 |Heat                |weather.csv     | |
 |Cool                |weather.csv     | |
-|Sunrise                |weather.csv     | |
-|Sunset                |weather.csv     | |
+|Sunrise                |weather.csv     |Time of sunrise |
+|Sunset                |weather.csv     |Time of sunset |
 |CodeSum                |weather.csv     | |
 |Depth                |weather.csv     | |
 |Water1                |weather.csv     | |
 |SnowFall                |weather.csv     | |
 |PrecipTotal                |weather.csv     | |
-|StnPressure                |weather.csv     | |
+|StnPressure                |weather.csv     |Barometric pressure |
 |SeaLevel                |weather.csv     | |
-|ResultSpeed                |weather.csv     | |
-|ResultDir                |weather.csv     | |
-|AvgSpeed                |weather.csv     | |
+|ResultSpeed                |weather.csv     |Wind speed |
+|ResultDir                |weather.csv     |Wind direction |
+|AvgSpeed                |weather.csv     |Wind average speed |
 
 **Evaluation Metrics**
 
-Since this is a classification model , we will evaluate how will our model will perform in classifying between a the presence of Wnv. Depending on the preprocessing method, different evaluation metric will be used accordingly.
+Since this is a classification model , we will evaluate how our model will perform in classifying between the presence and the absence of Wnv. Depending on the preprocessing method, different evaluation metrics will be used accordingly.
 
 For Imbalanced Data : F1 Score , Precision , AUC
 For Balanced Data : F1 Score , Accuracy
 Others Metrics : Recall Score
 
-**Workflow**
+**Workflow Process**
 
+Notebook 1 of 2 : General EDA
+Notebook 1 of 2 : EDA on Geolocation
+Notebook 2 of 2 : Data Preprocessing
+Notebook 2 of 2 : Feature Engineering
+Notebook 2 of 2 : Create Model
+Notebook 2 of 2 : Processing Dataframe for Kaggle Submission
+Notebook 2 of 2 : Cost Benefit Analysis
 
-In this section, we undergo studying, understanding and feature engineering of the datasets. After that, datasets were combined. The following actions are taken:
-
-Analyzing the train data and removing features that are not needed. Feature Engineering of species and distance of traps' locations and weather station.
-
-Analyzing the spray and trap data. Feature Engineering of trap_sprayed feature.
-
-Analyzing the weather data and removing features that are not need. Creating weekly average and time-lagged features for all remaning weather conditions. Feature Engineering of Codesum feature.
-
-Combined all datasets together into one. Analyzing the combined dataset. Feature Engineering of traps feature. Drop features that will not be used and prepare for modeling.
-We discovered that the time of the day where the sun is out was where the presence of Wnv was the strongest. Also, we observed that the more competent vectors for the spread of Wnv were the culex pipiens and culex restuans species. In order to deploy pesticides in a more cost-efficient way, we recommend spraying in areas where culex pipiens/restuans are most prominent and during the day as the Sun rises where the mosquitoes are most active.
-
-1. EDA
-2. Feature Engineering 
-3. Data Preprocessing
-4. Modelling to predict WNV probability (without pesticide)
-5. Select best Model to study the effect of pesticide
-  * 5.1 Hypothesis : Pesticide has no effect on Mosquito population
-
-
-Contents:
-1. Exploratory Data Analysis & Data Cleaning
-2. Modeling & Evaluation
-3. Additional Modeling
-4. Cost Benefit Analysis
-5. Conclusion and Recommendations
-6. Python Library Used
 
 ---------------------------
 
- 1. Exploratory Data Analysis & Data Cleaning
+ 1. General EDA
 
-We divided the EDA process into several sections and they are: Trap, Species, Spray, WNV, Weather, Overall. We found out that the trend every year during July - September particularly the occurence of WNV tend to increase. The weather during those month are warmest and wind speed is lowest.
+1. Traps
+There are 136 traps.
+T900 (at Ohare airport) is sampled the most
+Most sampling was performed in 2007 and decreased afterward. Very inconsistent and high oversampling in August 2007 leading to high population of mosquitos in 2007.
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/freq_traps.png’' width = 75%>
+<p/>
 
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/traps%20per%20year.png’' width = 75%>
+<p/>
 
- 2. Modelling & Evaluation
-
-
-Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores. Because there were heavy imbalances in the data collected (about 95% of the data indicated no Wnv), an over-sampling method known as SMOTE (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the AdaBoost model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting of the data but the small difference was acceptable by our means
-
-
-*Models used:*
-- Logistic Regression
-- Bernoulli Naive Bayes
-- Random Forest Classifier
-- ExtraTrees Classifier
-- AdaBoost Classifier
-- Gradient Boost Classifier
-- Support Vector Classifier
-
-
-*Evaluation Metrics used:*
-- ROC-AUC score
-- F1-Score
-- Recall
-- Precision
-- Accuracy
-
-
- 3. Additional Modelling
-
-We also explored into deep learning and neural networks. However, our neural network did not outperform the selected model, likely due to the fact it had low complexity. We decided not to further develop the deep learning model since it is not easily interpretable and we had to keep within the limited timeframe of this project.
-
-
- 4. Cost Benefit Analysis
-
-For our project, we use trap-sprayed feature as a strong predictor of the presence of the Wnv in some of the models, suggesting that the spraying was effective in dealing with the Wnv to a large extent. Using our production model to predict where we should spray as a benchmark for future assessments, the benefits of $1,048,789.03 would out-weigh the cost, which is the amount that would be saved from excessively spraying the whole city. The cost of spraying the whole city is $$1,653,467.04, whereas the direct cost and indirect cost of targeted spraying are $145,060.68 and $459,617.30.
-
-
- 5. Conclusion & Recommendation
+2. Mosquito Species
+Although all species sampled are carriers of WNV, the presence of WNV was tested positive for Culex restuans, C. pipiens, and C.pipiens/restuans. In addition, these 3 categories made up more than 96% of the sample of the species sampled.
+Source:  https://www.cdc.gov/westnile/resources/pdfs/MosquitoSpecies1999-2016.pdf
  
-In this project,we gained many useful insights about the mosquito population in Windy City and its relation to the epidemic of West Nile Virus(Wnv). Using our production model which is AdaBoost algorithm which gave us a high AUC and recall score. From our model, we can see the top features of importance contain result speed, wet & dry condition, sunlight, station pressure and some of the traps.
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/No.%20WNV%20in%20samples.png’' width = 75%>
+<p/>
+
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/Total%20no.%20of%20samples%20for%20each%20species.png’' width = 75%>
+<p/>
 
 
-Moving forward, more geographic and demographics information could also be useful in studying the presence of Wnv. Since Wnv is spread through moquitoes, we could expect that proportion of open water sources, percentage of grass land, forests, and urban landscape are all factors of the livelihood of these mosquitoes. We can expand the studies to the rest of United States with more data on more mosquitoes species as other states have other species as the main vector species.
+
+2. EDA on Geolocation
+We visualise the geolocation of the data on maps for better understanding.
+
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/wnv%20present%20map%20per%202007.png’' width = 75%>
+<p/>
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202009.png’' width = 75%>
+<p/>
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202011.png’' width = 75%>
+<p/>
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202013.png’' width = 75%>
+<p/>
 
 
- 6. Python Library Used
-- Pandas
-- Numpy
-- Seaborn
-- Matplotlib
-- Pickle
-- Sklearn
-- Imblearn
-- Tensorflow
-- Folium
-- Branca
-- Datetime
-- Suntime
-- Pytz
-- Geopy
+3. Data Preprocessing
+
+We removed duplicates, split the dataset, dropped columns and performed a SMOTENN to deal with imbalance data.
+4. Feature Engineering
+We generated three feature categories for our modeling process: 
+Dates: Year, Month, WeekofYear
+Sprayed: 0 means trap not sprayed, 1 means trap is sprayed
+Weather: Impute missing data and remove strongly correlated data form station 1.
+5. Modelling & Evaluation
+Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores. Because there were heavy imbalances in the data collected (about 95% of the data indicated no Wnv), an over-sampling method known as SMOTENN (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the XGBoost model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting of the data but the small difference was acceptable by our means
+
+|      | Model  | Train_AUC | Test_AUC | Precision | Specificity| Recall  | F1_score |  
+|---  |--        |---                | ---               | ---           | ---             | ----       |  ------        |
+|  0 | GB (No Smote) | 0.89 | 0.83 | 0.00 | 0.99 | 0.00 | 0.00|
+|1   | GB (Smote) | 0.99 | 0.81 | 0.17 | 0.86 | 0.53 | 0.26 |
+| 2  | RFC (No Smote) | 0.98 | 0.75 | 0.33 | 0.97 | 0.21 | 0.26| 
+|3   | RFC (Smote)| 1.00 | 0.75 | 0.22 | 0.92 | 0.39 | 0.28 |
+| 4  | XGB (No Smote)|0.88|0.83|0.00|1.00|0.00|0.0|
+|5   | XGB (Smote)|0.99|0.82|0.18|0.85|0.57|0.27|
+
+6. Processing Dataframe for Kaggle Submission
+Submission to kaggle resulted in a score of 0.62.
+7. Cost Benefit Analysis
+In this project we analyzed the costs (using pesticide Zenivex E4[1]) based on estimates of $500 for a session for 0.5 acre of land[2]. The cost is $149,000 for 0.6 km^2 [3]. By spending on treatment there will be fewer people dying or falling ill thus increasing workplace productivity and healthcare savings (average $11,000)[4]. We based our calculation on a study done in 2016 where 108 WNV cases[5] were found incurring an estimated medical bill of $1,190,000
+Since the benefits outweigh the costs the county should socialise the cost and share the prevention costs with the community as a whole.
+<p align = 'center'>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/est%20cost%20vs%20spray.png’' width = 75%>
+<p/>
+
+
+Moving forward, more geographic and demographic information could also be useful in studying the presence of Wnv. Since Wnv is spread through mosquitoes, we could expect that proportion of open water sources, percentage of grassland, forests, and urban landscape are all factors of the livelihood of these mosquitoes. We can expand the studies to the rest of the United States with more data on more mosquitoes species as other states have other species as the main vector species.
+
 
 ## References
-1. https://github.com/pushshift/api
-2. https://pbpython.com/interactive-dashboards.html
-3. https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/
-4. https://towardsdatascience.com/text-analysis-basics-in-python-443282942ec5
+* [1. Pesticide info](https://www.cmmcp.org/pesticide-information/pages/zenivex-e4-etofenprox)
+* [2. Cost of spray](https://www.callnorthwest.com/2020/05/how-much-does-a-mosquito-treatment-cost/)
 
+* [3. Chicago spray strategy](https://www.chicago.gov/city/en/depts/cdph/provdrs/healthy_communities/news/2020/august/city-to-spray-insecticide-thursday-to-kill-mosquitoes.html)
 
-**Model Explored**
+* [4. WNV cost](https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-019-4596-9)
 
-**Key Insight**
-
-We need to derive an effective plan to deploy pesticides throughout the city, and that is exactly where you come in!  
 

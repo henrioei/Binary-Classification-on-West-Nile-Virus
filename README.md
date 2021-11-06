@@ -6,7 +6,7 @@ ___
 Source : https://www.purdue.edu/uns/html4ever/2006/060814.Rossmann.westnile.html
 
 
-## Problem Statement
+## Introduction
 
 West Nile virus (WNV) is a single-stranded RNA virus that causes West Nile fever. It is a member of the family Flaviviridae, from the genus Flavivirus, which also contains the Zika virus, dengue virus, and yellow fever virus. The virus is primarily transmitted by mosquitoes, mostly species of Culex. It has been causing significant and sometimes severe human diseases. Although pesticides are known to be effective in dealing with the virus-carrying mosquitoes, it is expensive to deploy pesticides throughout the city. 
 
@@ -86,8 +86,13 @@ The following datasets were provided for this project:<br>
 |ResultDir                |weather.csv     | |
 |AvgSpeed                |weather.csv     | |
 
-## 3. EDA and Pre-processing 
+**Evaluation Metrics**
 
+Since this is a classification model , we will evaluate how will our model will perform in classifying between a the presence of Wnv. Depending on the preprocessing method, different evaluation metric will be used accordingly.
+
+For Imbalanced Data : F1 Score , Precision , AUC
+For Balanced Data : F1 Score , Accuracy
+Others Metrics : Recall Score
 
 **Workflow**
 

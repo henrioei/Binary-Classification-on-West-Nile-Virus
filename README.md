@@ -93,13 +93,13 @@ Others Metrics : Recall Score
 
 **Workflow Process**
 
-* 1. General EDA
-* 2. EDA on Geolocation
-* 3. Data Preprocessing
-* 4. Feature Engineering
-* 5. Create Model
-* 6. Processing Dataframe for Kaggle Submission
-* 7. Cost Benefit Analysis
+# 1. General EDA
+# 2. EDA on Geolocation
+# 3. Data Preprocessing
+# 4. Feature Engineering
+# 5. Create Model
+# 6. Processing Dataframe for Kaggle Submission
+# 7. Cost Benefit Analysis
 
 
 ---------------------------

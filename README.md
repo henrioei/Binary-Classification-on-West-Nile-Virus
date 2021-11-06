@@ -1,5 +1,10 @@
 # West Nile Virus Prediction
 ___
+<p align = 'center'>
+  <img src = 'https://raw.githubusercontent.com/86lekwenshiung/West-Nile-Virus-Prediction/main/image/rossmann-westnile.jpg' width = 75%>
+<p/>
+Source : https://www.purdue.edu/uns/html4ever/2006/060814.Rossmann.westnile.html
+
 
 ## Problem Statement
 
@@ -30,16 +35,6 @@ The data from these three sources were combined to form a dataset for analysis a
 https://github.com/86lekwenshiung/West-Nile-Virus-Prediction
 
 ## Implementation
-
-### Folder Structure
-
-| Folder | Description |
-| :--- | :--- |
-| West-Nile-Virus-Prediction/dataset      | Folder for datasets used in the project                              |
-| West-Nile-Virus-Prediction/notebooks    | Jupyter Notebook for the project                                     |
-| West-Nile-Virus-Prediction/presentation | PDF file of the presentation                                         |
-| West-Nile-Virus-Prediction/references   | GA project references as well as any external data                   |
-
 
 ### Data
 The following datasets were provided for this project:<br>

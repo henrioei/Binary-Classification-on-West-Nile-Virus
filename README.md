@@ -106,58 +106,83 @@ Notebook 2 of 2 : Cost Benefit Analysis
  1. General EDA
 
 1. Traps
+
+
 There are 136 traps.
-T900 (at Ohare airport) is sampled the most
+
+
+T900 (at Ohare airport) is sampled the most.
+
+
 Most sampling was performed in 2007 and decreased afterward. Very inconsistent and high oversampling in August 2007 leading to high population of mosquitos in 2007.
+
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/freq_traps.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/freq_traps.png' width = 75%>
 <p/>
 
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/traps%20per%20year.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/traps%20per%20year.png' width = 75%>
 <p/>
 
 2. Mosquito Species
+
+
 Although all species sampled are carriers of WNV, the presence of WNV was tested positive for Culex restuans, C. pipiens, and C.pipiens/restuans. In addition, these 3 categories made up more than 96% of the sample of the species sampled.
+
+
 Source:  https://www.cdc.gov/westnile/resources/pdfs/MosquitoSpecies1999-2016.pdf
  
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/No.%20WNV%20in%20samples.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/No.%20WNV%20in%20samples.png' width = 75%>
 <p/>
 
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/Total%20no.%20of%20samples%20for%20each%20species.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/Total%20no.%20of%20samples%20for%20each%20species.png' width = 75%>
 <p/>
 
 
 
 2. EDA on Geolocation
+
+
 We visualise the geolocation of the data on maps for better understanding.
 
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/wnv%20present%20map%20per%202007.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/wnv%20present%20map%20per%202007.png' width = 75%>
 <p/>
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202009.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202009.png' width = 75%>
 <p/>
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202011.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202011.png' width = 75%>
 <p/>
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202013.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/WNV%20map%20year%202013.png' width = 75%>
 <p/>
 
 
 3. Data Preprocessing
 
 We removed duplicates, split the dataset, dropped columns and performed a SMOTENN to deal with imbalance data.
+
+
 4. Feature Engineering
+
+
 We generated three feature categories for our modeling process: 
-Dates: Year, Month, WeekofYear
-Sprayed: 0 means trap not sprayed, 1 means trap is sprayed
-Weather: Impute missing data and remove strongly correlated data form station 1.
+
+* Dates: Year, Month, WeekofYear
+
+* Sprayed: 0 means trap not sprayed, 1 means trap is sprayed
+
+* Weather: Impute missing data and remove strongly correlated data form station 1.
+
+
 5. Modelling & Evaluation
+
+
 Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores. Because there were heavy imbalances in the data collected (about 95% of the data indicated no Wnv), an over-sampling method known as SMOTENN (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the XGBoost model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting of the data but the small difference was acceptable by our means
+
 
 |      | Model  | Train_AUC | Test_AUC | Precision | Specificity| Recall  | F1_score |  
 |---  |--        |---                | ---               | ---           | ---             | ----       |  ------        |
@@ -169,12 +194,22 @@ Several classifier models were developed, where the hyperparameters were tuned f
 |5   | XGB (Smote)|0.99|0.82|0.18|0.85|0.57|0.27|
 
 6. Processing Dataframe for Kaggle Submission
+
+
 Submission to kaggle resulted in a score of 0.62.
+
+
 7. Cost Benefit Analysis
+
+
 In this project we analyzed the costs (using pesticide Zenivex E4[1]) based on estimates of $500 for a session for 0.5 acre of land[2]. The cost is $149,000 for 0.6 km^2 [3]. By spending on treatment there will be fewer people dying or falling ill thus increasing workplace productivity and healthcare savings (average $11,000)[4]. We based our calculation on a study done in 2016 where 108 WNV cases[5] were found incurring an estimated medical bill of $1,190,000
+
+
 Since the benefits outweigh the costs the county should socialise the cost and share the prevention costs with the community as a whole.
+
+
 <p align = 'center'>
-  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/est%20cost%20vs%20spray.png’' width = 75%>
+  <img src = 'https://github.com/86lekwenshiung/West-Nile-Virus-Prediction/blob/main/image/est%20cost%20vs%20spray.png' width = 75%>
 <p/>
 
 

@@ -83,7 +83,7 @@ The following datasets were provided for this project:<br>
 |ResultDir                |weather.csv     |Wind direction |
 |AvgSpeed                |weather.csv     |Wind average speed |
 
-**Evaluation Metrics**
+## *Evaluation Metrics*
 
 Since this is a classification model , we will evaluate how our model will perform in classifying between the presence and the absence of Wnv. Depending on the preprocessing method, different evaluation metrics will be used accordingly.
 
@@ -91,15 +91,15 @@ For Imbalanced Data : F1 Score , Precision , AUC
 For Balanced Data : F1 Score , Accuracy
 Others Metrics : Recall Score
 
-**Workflow Process**
+## *Workflow Process*
 
-# 1. General EDA
-# 2. EDA on Geolocation
-# 3. Data Preprocessing
-# 4. Feature Engineering
-# 5. Create Model
-# 6. Processing Dataframe for Kaggle Submission
-# 7. Cost Benefit Analysis
+### 1. General EDA
+### 2. EDA on Geolocation
+### 3. Data Preprocessing
+### 4. Feature Engineering
+### 5. Create Model
+### 6. Processing Dataframe for Kaggle Submission
+### 7. Cost Benefit Analysis
 
 
 ---------------------------
@@ -224,5 +224,8 @@ Moving forward, more geographic and demographic information could also be useful
 * [3. Chicago spray strategy](https://www.chicago.gov/city/en/depts/cdph/provdrs/healthy_communities/news/2020/august/city-to-spray-insecticide-thursday-to-kill-mosquitoes.html)
 
 * [4. WNV cost](https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-019-4596-9)
+
+* [5. No. of WNV 2016 in Chicago](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7241786/)
+
 
 

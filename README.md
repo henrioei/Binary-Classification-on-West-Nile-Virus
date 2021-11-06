@@ -123,6 +123,8 @@ Contents:
 
  1. Exploratory Data Analysis & Data Cleaning
 
+We divided the EDA process into several sections and they are: Trap, Species, Spray, WNV, Weather, Overall. We found out that the trend every year during July - September particularly the occurence of WNV tend to increase. The weather during those month are warmest and wind speed is lowest.
+
 
  2. Modelling & Evaluation
 
@@ -149,14 +151,17 @@ Several classifier models were developed, where the hyperparameters were tuned f
 
 
  3. Additional Modelling
+
 We also explored into deep learning and neural networks. However, our neural network did not outperform the selected model, likely due to the fact it had low complexity. We decided not to further develop the deep learning model since it is not easily interpretable and we had to keep within the limited timeframe of this project.
 
 
  4. Cost Benefit Analysis
+
 For our project, we use trap-sprayed feature as a strong predictor of the presence of the Wnv in some of the models, suggesting that the spraying was effective in dealing with the Wnv to a large extent. Using our production model to predict where we should spray as a benchmark for future assessments, the benefits of $1,048,789.03 would out-weigh the cost, which is the amount that would be saved from excessively spraying the whole city. The cost of spraying the whole city is $$1,653,467.04, whereas the direct cost and indirect cost of targeted spraying are $145,060.68 and $459,617.30.
 
 
  5. Conclusion & Recommendation
+ 
 In this project,we gained many useful insights about the mosquito population in Windy City and its relation to the epidemic of West Nile Virus(Wnv). Using our production model which is AdaBoost algorithm which gave us a high AUC and recall score. From our model, we can see the top features of importance contain result speed, wet & dry condition, sunlight, station pressure and some of the traps.
 
 
@@ -184,6 +189,8 @@ Moving forward, more geographic and demographics information could also be usefu
 2. https://pbpython.com/interactive-dashboards.html
 3. https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/
 4. https://towardsdatascience.com/text-analysis-basics-in-python-443282942ec5
+
+
 **Model Explored**
 
 **Key Insight**

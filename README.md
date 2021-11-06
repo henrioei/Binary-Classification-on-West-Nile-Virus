@@ -74,23 +74,24 @@ The following datasets were provided for this project:<br>
 |Tmax                   |weather.csv     |Maximum Temperature                      |
 |Tmin                   |weather.csv     |Minimum Temperature                      |
 |Tavg                   |weather.csv     |Average Temperature                      |
-|Depart                 |weather.csv     |                                         |
-|DewPoint               |weather.csv     |Temperature of water condensation |               
-|WetBulb                |weather.csv     | Temperature of wet bulb thermometer|                   
-|Heat                |weather.csv     | |
-|Cool                |weather.csv     | |
+|Depart                 |weather.csv     |       Departure from normal             |
+|DewPoint               |weather.csv     |Temperature of water condensation        |               
+|WetBulb                |weather.csv     | Temperature of wet bulb thermometer     |                   
+|Heat                   |weather.csv     |Heating                                  |
+|Cool                   |weather.csv     | Cooling | 
 |Sunrise                |weather.csv     |Time of sunrise |
-|Sunset                |weather.csv     |Time of sunset |
-|CodeSum                |weather.csv     | |
-|Depth                |weather.csv     | |
-|Water1                |weather.csv     | |
-|SnowFall                |weather.csv     | |
-|PrecipTotal                |weather.csv     | |
-|StnPressure                |weather.csv     |Barometric pressure |
-|SeaLevel                |weather.csv     | |
-|ResultSpeed                |weather.csv     |Wind speed |
-|ResultDir                |weather.csv     |Wind direction |
-|AvgSpeed                |weather.csv     |Wind average speed |
+|Sunset                 |weather.csv     |Time of sunset |
+|CodeSum                |weather.csv     | Weather phenomena |
+|Depth                  |weather.csv     | |
+|Water1                 |weather.csv     | |
+|SnowFall               |weather.csv     | Precipitation depth |
+|PrecipTotal            |weather.csv     | Precipitation depth |
+|StnPressure            |weather.csv     | Average station pressure |
+|SeaLevel               |weather.csv     | Average sea level pressure |
+|ResultSpeed            |weather.csv     |Wind speed |
+|ResultDir              |weather.csv     |Wind direction |
+|AvgSpeed               |weather.csv     |Wind average speed |
+
 
 ## Evaluation Metrics
 
@@ -194,14 +195,14 @@ We generated three feature categories for our modeling process:
 Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores. Because there were heavy imbalances in the data collected (about 95% of the data indicated no Wnv), an over-sampling method known as SMOTENN (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the XGBoost model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting of the data but the small difference was acceptable by our means.
 
 
-|      | Model  | Train_AUC | Test_AUC | Precision | Specificity| Recall  | F1_score |  
-|---  |--        |---                | ---               | ---           | ---             | ----       |  ------        |
-|  0 | GB (No Smote) | 0.89 | 0.83 | 0.00 | 0.99 | 0.00 | 0.00|
-|1   | GB (Smote) | 0.99 | 0.81 | 0.17 | 0.86 | 0.53 | 0.26 |
-| 2  | RFC (No Smote) | 0.98 | 0.75 | 0.33 | 0.97 | 0.21 | 0.26| 
-|3   | RFC (Smote)| 1.00 | 0.75 | 0.22 | 0.92 | 0.39 | 0.28 |
-| 4  | XGB (No Smote)|0.88|0.83|0.00|1.00|0.00|0.0|
-|5   | XGB (Smote)|0.99|0.82|0.18|0.85|0.57|0.27|
+|     | Model         | Train_AUC | Test_AUC | Precision | Specificity| Recall  | F1_score |  
+|---  |--             |---                | ---               | ---           | ---             | ----       |  ------        |
+|  0  | GB (No Smote) | 0.89 | 0.83 | 0.00 | 0.99 | 0.00 | 0.00|
+|  1  | GB (Smote)    | 0.99 | 0.81 | 0.17 | 0.86 | 0.53 | 0.26 |
+|  2  | RFC (No Smote)| 0.98 | 0.75 | 0.33 | 0.97 | 0.21 | 0.26| 
+|  3  | RFC (Smote)   | 1.00 | 0.75 | 0.22 | 0.92 | 0.39 | 0.28 |
+|  4  | XGB (No Smote)|0.88|0.83|0.00|1.00|0.00|0.0|
+|  5  | XGB (Smote)   |0.99|0.82|0.18|0.85|0.57|0.27|
 
 ## 6. Processing Dataframe for Kaggle Submission
 
